@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Secure Shortly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Secure Shortly</h1>
+      <p class="tag">A secure URL shortener with safety checks</p>
+    </header>
+
+    <section class="shorten">
+      <div class="input-row">
+        <input id="urlInput" type="url" placeholder="https://example.com/long/link" required />
+        <button id="shortenBtn" class="primary">Shorten</button>
+      </div>
+      <div id="alerts" role="status" aria-live="polite"></div>
+
+      <div class="options">
+        <label>Custom slug <input id="slugInput" placeholder="e.g. my-link" /></label>
+        <label><input id="openNew" type="checkbox" checked /> Open in new tab</label>
+      </div>
+
+      <div class="result" id="resultArea" hidden>
+        <div class="result-box">
+          <div class="left">
+            <div class="shortUrl" id="shortUrl"></div>
+            <div class="meta" id="metaInfo"></div>
+          </div>
+          <div class="right">
+            <button id="copyBtn">Copy</button>
+            <button id="openBtn">Open</button>
+            <button id="deleteBtn" class="danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="list card">
+      <h2>Your Links</h2>
+      <div id="linksList" class="linksList"></div>
+      <div class="empty" id="emptyText">No shortened links yet.</div>
+    </section>
+
+    <footer class="foot">Data is stored safely in your browser only.</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
